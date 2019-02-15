@@ -27,9 +27,9 @@ WORKDIR /root
 RUN git clone https://github.com/infobyte/faraday.git faraday-dev
 WORKDIR ./faraday-dev
 RUN ./install.sh
-COPY entrypoint.sh /root/entrypoint.sh
-RUN chmod +x /root/entrypoint.sh
+COPY entrypoint.sh /root/docker-entrypoint.sh
+RUN chmod +x /root/docker-entrypoint.sh
 
 EXPOSE 5985
 
-ENTRYPOINT ["/bin/bash","/root/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","/root/docker-entrypoint.sh"]
